@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include <string.h>
-// Desafio novato
+#include <string.h> //biblioteca adicionada para poder usar o strcspn() para 
+
 // Desafio Super Trunfo - Países
 // Tema 1 - Cadastro das cartas
 // Objetivo: No nível novato você deve criar as cartas representando as cidades utilizando scanf para entrada de dados e printf para exibir as informações.
@@ -21,6 +21,12 @@ int main() {
     // O produto interno da cidade
     int ponto_turisticos1, ponto_turisticos2;
     // Número de pontos turísticos da cidade
+    float densidade_populacional1, densidade_populacional2;
+    // Variável para calcular a densidade populacional
+    float pib_per_capita1, pib_per_capita2;
+    // Variável para calcular o PIB per capita
+
+    printf("*** SUPER TRUNFO ***\n");
 
   // Área para entrada de dados
     //Cadastro Carta 1
@@ -33,10 +39,11 @@ int main() {
     scanf("%s", codigo1); // código da carta representado pela letra do estado mais um número
 
     getchar();
+    //remove o ENTER que ficou no buffer depois do scanf(), evitando que o nome da cidade saia errado
 
     printf("Nome da cidade: ");
     fgets(nome_da_cidade1, 50, stdin); // nome da cidade
-    nome_da_cidade1[strcspn(nome_da_cidade1, "\n")] = 0;
+    nome_da_cidade1[strcspn(nome_da_cidade1, "\n")] = 0; //strcspn usado para remover o ENTER que ficou dentro da string
 
     printf("População: ");
     scanf("%d", &populacao1); // População - o número de habitantes da cidade
@@ -49,6 +56,11 @@ int main() {
 
     printf("Número de Pontos Turisticos: \n");
     scanf("%d", &ponto_turisticos1); // Número de pontos turísticos da cidade
+    
+    // Cálculo de variáveis Carta 1
+    densidade_populacional1 = populacao1 / area1;
+    pib_per_capita1 = (pib1 * 1000000000.0f) / populacao1; //valor do pib convertido de bilhões de reais para reais
+
 
     //Cadastro Carta 2
     printf("Carta 2:\n");
@@ -59,10 +71,11 @@ int main() {
     scanf("%s", codigo2); // código da carta representado pela letra do estado mais um número
 
     getchar();
+    //remove o ENTER que ficou no buffer depois do scanf(), evitando que o nome da cidade saia errado
 
     printf("Nome da cidade: ");
     fgets(nome_da_cidade2, 50, stdin); // nome da cidade
-    nome_da_cidade2[strcspn(nome_da_cidade2, "\n")] = 0;
+    nome_da_cidade2[strcspn(nome_da_cidade2, "\n")] = 0; //strcspn usado para remover o ENTER que ficou dentro da string
 
     printf("População: ");
     scanf("%d", &populacao2); // População - o número de habitantes da cidade
@@ -76,6 +89,10 @@ int main() {
     printf("Número de Pontos Turisticos: \n");
     scanf("%d", &ponto_turisticos2); // Número de pontos turísticos da cidade
 
+    // Cálculo de variáveis Carta 2
+    densidade_populacional2 = populacao2 / area2;
+    pib_per_capita2 = (pib2 * 1000000000.0f) / populacao2; //valor do pib convertido de bilhões de reais para reais
+
   // Área para exibição dos dados da cidade
     //Exibição Carta 1
     printf("Carta 1:\n");
@@ -86,6 +103,8 @@ int main() {
     printf("Área: %.2f km2\n", area1);
     printf("PIB: %.2f bilhões de reais\n",  pib1);
     printf("Número de Pontos Turisticos: %d\n", ponto_turisticos1);
+    printf("Densidade Populacional: %.2f hab/km²\n", densidade_populacional1);
+    printf("PIB per Capita: %.2f reais\n", pib_per_capita1);
 
     //Exibição Carta 2
     printf("Carta 2:\n");
@@ -96,6 +115,8 @@ int main() {
     printf("Área: %.2f km2\n", area2) ;
     printf("PIB: %.2f bilhões de reais\n",  pib2);
     printf("Número de Pontos Turisticos: %d\n", ponto_turisticos2);
+    printf("Densidade Populacional: %.2f hab/km²\n", densidade_populacional2);
+    printf("PIB per Capita: %.2f reais\n", pib_per_capita2);
 
 return 0;
 } 
