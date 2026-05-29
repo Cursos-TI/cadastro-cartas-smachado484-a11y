@@ -29,6 +29,8 @@ int main() {
     printf("*** SUPER TRUNFO ***\n");
 
   // Área para entrada de dados
+    printf("Vamos começar cadastrando suas cartas!\n");
+
     //Cadastro Carta 1
     printf("Carta 1:\n");
     
@@ -92,6 +94,8 @@ int main() {
     pib_per_capita2 = (pib2 * 1000000000.0f) / populacao2; //valor do pib convertido de bilhões de reais para reais
 
   // Área para exibição dos dados da cidade
+    printf("Essas foram as cartas cadastradas:\n");
+
     //Exibição Carta 1
     printf("Carta 1:\n");
     printf("Estado: %c\n", estado1);
@@ -115,6 +119,8 @@ int main() {
     printf("Número de Pontos Turisticos: %d\n", ponto_turisticos2);
     printf("Densidade Populacional: %.2f hab/km²\n", densidade_populacional2);
     printf("PIB per Capita: %.2f reais\n", pib_per_capita2);
+
+    
 
 return 0;
 } 
