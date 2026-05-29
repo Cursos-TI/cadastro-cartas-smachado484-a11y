@@ -132,11 +132,11 @@ int main() {
     printf("Super Poder: %.2f\n", superpoder2);
     printf("\n");
 
-    //Área da Batalha de Cartas no Super Trunfo - comparação de variáveis
+  //Área da Batalha de Cartas no Super Trunfo - comparação de variáveis
     printf("*** A batalha vai começar! Qual carta irá vencer? ***\n");
     printf("\n");
 
-      // Cálculo da comparação entre variáveis
+    // Cálculo da comparação entre variáveis
     resultado_popupacao = populacao1 > populacao2;
     resultado_area = area1 > area2;
     resultado_pib = pib1 > pib2;
@@ -145,7 +145,7 @@ int main() {
     resultado_pib_per_capita = pib_per_capita1 > pib_per_capita2;
     resultado_superpoder = superpoder1 > superpoder2;
 
-      //Exibição dos resultados
+    //Exibição dos resultados
     printf("Comparação de Cartas:\n");
 
     printf("População: Carta 1 venceu (%d)\n", resultado_popupacao);
